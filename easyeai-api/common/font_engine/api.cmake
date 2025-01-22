@@ -24,7 +24,7 @@ set(FONTENGINE_INCLUDE_DIRS
 # c/c++ flags
 set(FONTENGINE_LIBS 
     ${OpenCV_LIBS}
-    ${FREETYPE2_LIBRARY_DIRS}
+    ${FREETYPE2_LIBS}
     freetype
     stdc++ 
     )

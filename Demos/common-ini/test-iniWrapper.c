@@ -27,9 +27,9 @@ int main(void)
 	printf("SoftwareVer: %s\n", SoftwareVer);
 	printf("EquipmentID: %s\n", EquipmentID);
 
-    memcpy(HardwareVer, ini_read_string(SYSTEM_CONFIG_PATH, "machineInfo", "HardwareVer"),sizeof(HardwareVer));
-    memcpy(SoftwareVer, ini_read_string(SYSTEM_CONFIG_PATH, "machineInfo", "SoftwareVer"),sizeof(SoftwareVer));
-    memcpy(EquipmentID, ini_read_string(SYSTEM_CONFIG_PATH, "machineInfo", "EquipmentID"),sizeof(EquipmentID));
+    memcpy(HardwareVer, ini_read_string(SYSTEM_CONFIG_PATH, "machineInfo", "HardwareVer"), sizeof(HardwareVer));
+    memcpy(SoftwareVer, ini_read_string(SYSTEM_CONFIG_PATH, "machineInfo", "SoftwareVer"), sizeof(SoftwareVer));
+    memcpy(EquipmentID, ini_read_string(SYSTEM_CONFIG_PATH, "machineInfo", "EquipmentID"), sizeof(EquipmentID));
 	
 	printf("====================   After Read inifile :\n");
 	printf("HardwareVer: %s\n", HardwareVer);

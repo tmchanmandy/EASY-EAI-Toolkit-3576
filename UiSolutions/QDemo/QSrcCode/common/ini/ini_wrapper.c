@@ -55,11 +55,10 @@ int32_t ini_read_int(const char *file, const char *pSection, const char *pKey)
     return value;
 }
 
-// 这个接口需要多线程使用时，最好也加下锁
 const char *ini_read_string(const char *file, const char *pSection, const char *pKey)
 {
     const char *retStr = NULL;
-    static char strValue[2048] = {0};
+    static char strValue[256] = {0};
     
     //文件是否存在
     if (access(file, F_OK) == -1)
@@ -75,9 +74,7 @@ const char *ini_read_string(const char *file, const char *pSection, const char *
     //读取配置信息
     ini_locateHeading(ini_file, pSection);
     ini_locateKey(ini_file, pKey);
-
-    //这里多线程调用就不行了，得注意下加锁
-    // ========================== lock ==========================
+    
     bzero(strValue, sizeof(strValue));
     int res = ini_readString(ini_file, strValue, sizeof(strValue));
     if(-1 == res){
@@ -85,7 +82,6 @@ const char *ini_read_string(const char *file, const char *pSection, const char *
     }else{
         retStr = strValue;
     }
-    // ========================= unlock =========================
     
     //关闭文件
     ini_close(ini_file);
@@ -96,7 +92,7 @@ const char *ini_read_string(const char *file, const char *pSection, const char *
 int32_t ini_write_int(const char *file, const char *pSection, const char *pKey, int Val)
 {
     int ret = -1;
-#if 0    //可不要。注释掉就是没有文件则强制创建
+#if 1    //可不要。注释掉就是没有文件则强制创建
     //文件是否存在
     if (access(file, F_OK) == -1)
         return ret;
@@ -129,7 +125,7 @@ int32_t ini_write_int(const char *file, const char *pSection, const char *pKey, 
 int32_t ini_write_string(const char *file, const char *pSection, const char *pKey, const char *pStr)
 {
     int32_t ret = -1;
-#if 0    //可不要。注释掉就是没有文件则强制创建
+#if 1    //可不要。注释掉就是没有文件则强制创建
     //文件是否存在
     if (access(file, F_OK) == -1)
         return ret;

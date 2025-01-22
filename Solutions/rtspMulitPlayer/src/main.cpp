@@ -13,16 +13,11 @@
 #define ARRAY_SIZE(x) (sizeof(x) / sizeof((x)[0]))
 static const SrcCfg_t SrcCfg_tab[] = {
 	{
-        .srcType   = "rtsp",
-        .loaction  = "rtsp://192.168.3.101:554/aabb",
-        .videoEncType = "h265",
-        .audioEncType = "pcma",
-/*
-	}, {
 		.srcType   = "rtsp",
 		.loaction  = "rtsp://admin:a12345678@192.168.1.67",
 		.videoEncType = "h264",
 		.audioEncType = "null",
+/*
 	}, {
 		.srcType   = "rtsp",
 		.loaction  = "rtsp://admin:a12345678@192.168.1.68",
@@ -33,6 +28,11 @@ static const SrcCfg_t SrcCfg_tab[] = {
 		.loaction  = "rtsp://admin:a12345678@192.168.1.69",
 		.videoEncType = "h264",
 		.audioEncType = "null",
+	}, {
+        .srcType   = "rtsp",
+        .loaction  = "rtsp://192.168.3.101:554/aabb,
+        .videoEncType = "h265",
+        .audioEncType = "pcma",
 	}, { // *以下格式尚未研发完成，暂不投入使用
 		.srcType   = "file",
 		.loaction  = "/userdata/mydata/car.mp4",

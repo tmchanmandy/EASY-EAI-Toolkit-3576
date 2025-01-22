@@ -22,6 +22,19 @@
 
 重要更新：
 ---
+> 2024-01-22 :
+> * 发布 EASY-EAI-Toolkit-3576-0.0.1
+> * 更新 easyeai-api
+>     * 通用组件api
+>         * [更新] font_engine
+>         * [更新] ini
+> * 更新【Api单例】
+>     * [更新] common-ini
+> * 更新【开发实例】
+>     * [更新] rtspMulitPlayer
+> * 新增【Ui开发实例】
+>     * [新增] QDemo
+>
 > 2025-01-17 :
 > * 发布 EASY-EAI-Toolkit-3576-0.0.0
 > * 更新 easyeai-api
