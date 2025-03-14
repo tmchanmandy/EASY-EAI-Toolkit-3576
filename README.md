@@ -22,7 +22,25 @@
 
 重要更新：
 ---
-> 2024-01-22 :
+> 2025-03-14 :
+> * 发布 EASY-EAI-Toolkit-3576-0.0.2
+> * 更新 easyeai-api
+>     * 算法组件api
+>         * [新增] algorithm-car
+>         * [新增] algorithm-face_detect
+>         * [新增] algorithm-face_recognition
+>         * [新增] algorithm-fire
+>         * [新增] algorithm-helmet
+>         * [新增] algorithm-person
+> * 更新【Api单例】
+>     * [新增] algorithm-car
+>     * [新增] algorithm-face_detect
+>     * [新增] algorithm-face_recognition
+>     * [新增] algorithm-fire
+>     * [新增] algorithm-helmet
+>     * [新增] algorithm-person
+>
+> 2025-01-22 :
 > * 发布 EASY-EAI-Toolkit-3576-0.0.1
 > * 更新 easyeai-api
 >     * 通用组件api

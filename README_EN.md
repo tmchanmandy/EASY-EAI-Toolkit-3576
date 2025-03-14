@@ -24,7 +24,25 @@ How to use：
 
 important update log:
 ---
-> 2024-01-22 :
+> 2025-03-14 :
+> * Release EASY-EAI-Toolkit-3576-0.0.2
+> * update easyeai-api
+>     * algorithm_api
+>         * [new] algorithm-car
+>         * [new] algorithm-face_detect
+>         * [new] algorithm-face_recognition
+>         * [new] algorithm-fire
+>         * [new] algorithm-helmet
+>         * [new] algorithm-person
+> * update Demo
+>     * [new] algorithm-car
+>     * [new] algorithm-face_detect
+>     * [new] algorithm-face_recognition
+>     * [new] algorithm-fire
+>     * [new] algorithm-helmet
+>     * [new] algorithm-person
+>
+> 2025-01-22 :
 > * Release EASY-EAI-Toolkit-3576-0.0.1
 > * update easyeai-api
 >     * common_api
