@@ -24,6 +24,29 @@
 
 //#include "ini_wrapper.h"
 
+int32_t ini_section_exist(const char *file, const char *pSection)
+{
+    int32_t ret = -1;
+    
+    //文件是否存在
+    if (access(file, F_OK) == -1)
+        return ret;
+    
+    //打开文件
+    ini_fd_t ini_file = ini_open(file, "r", ";");
+    if (ini_file == 0){
+        printf("ini_open %s error!,%s\n", file, strerror(errno));
+        return ret;
+    }
+    
+    ret = ini_locateHeading(ini_file, pSection);
+    
+    //关闭文件
+    ini_close(ini_file);
+
+    return ret;
+}
+
 int32_t ini_read_int(const char *file, const char *pSection, const char *pKey)
 {
     int32_t value = -1;
@@ -35,7 +58,7 @@ int32_t ini_read_int(const char *file, const char *pSection, const char *pKey)
     //打开文件
     ini_fd_t ini_file = ini_open(file, "r", ";");
     if (ini_file == 0){
-        printf("ini_open %s error!,%s\n", file, strerror(errno));
+        printf("ini_open %s error! %s\n", file, strerror(errno));
         return value;
     }
     
@@ -46,7 +69,7 @@ int32_t ini_read_int(const char *file, const char *pSection, const char *pKey)
     int res = ini_readInt(ini_file, &value);
     if(-1 == res){
         value = -1;
-        printf("ini_readInt error!,%s,[%s]->%s\n",strerror(errno), pSection, pKey);
+        printf("ini_readInt error! [%s]->%s not yet created\n", pSection, pKey);
     }
     
     //关闭文件
@@ -91,6 +114,35 @@ const char *ini_read_string(const char *file, const char *pSection, const char *
     ini_close(ini_file);
     
     return retStr;
+}
+
+int32_t ini_read_string2(const char *file, const char *pSection, const char *pKey, char *pStr, int datalen)
+{
+    //文件是否存在
+    if (access(file, F_OK) == -1)
+        return -1;
+    
+    //打开文件
+    ini_fd_t ini_file = ini_open(file, "r", ";");
+    if (ini_file == 0) {
+        printf("ini_open %s error!,%s\n", file, strerror(errno));
+        return -1;
+    }
+    
+    //读取配置信息
+    ini_locateHeading(ini_file, pSection);
+    ini_locateKey(ini_file, pKey);
+
+    bzero(pStr, datalen);
+    int ret = ini_readString(ini_file, pStr, datalen);
+    if(-1 == ret){
+        printf("ini_readString error!,%s,[%s]->%s\n", strerror(errno), pSection, pKey);
+    }
+    
+    //关闭文件
+    ini_close(ini_file);
+    
+    return ret;
 }
 
 int32_t ini_write_int(const char *file, const char *pSection, const char *pKey, int Val)

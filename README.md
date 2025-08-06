@@ -22,6 +22,28 @@
 
 重要更新：
 ---
+> 2025-08-06 :
+> * 发布 EASY-EAI-Toolkit-3576-0.0.3
+> * 更新 easyeai-api
+>     * 算法组件api
+>         * [新增] algorithm-person_pos
+>         * [新增] algorithm-speech_recognition
+>         * [更新] algorithm-car_detect
+>         * [更新] algorithm-fire_detect
+>         * [更新] algorithm-face_detect
+>         * [更新] algorithm-face_recognition
+>         * [更新] algorithm-helmet_detect
+>         * [更新] algorithm-person_detect
+>         * [更新] algorithm-ocr
+>     * 通用组件api
+>         * [新增] common-ipc
+>         * [新增] common-json
+>         * [新增] common-log_manager
+>         * [更新] common-ini
+> * 更新【Api单例】
+>     * [新增] algorithm-person_pos
+>     * [新增] algorithm-speech_recognition
+>
 > 2025-03-14 :
 > * 发布 EASY-EAI-Toolkit-3576-0.0.2
 > * 更新 easyeai-api

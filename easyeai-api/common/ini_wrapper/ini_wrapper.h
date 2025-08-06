@@ -22,8 +22,11 @@
 extern "C" {
 #endif
 
+extern int32_t ini_section_exist(const char *file, const char *pSection);
+
 extern int32_t ini_read_int(const char *file, const char *pcSection, const char *pcKey);
 extern const char *ini_read_string(const char *file, const char *pcSection, const char *pcKey);
+extern int32_t ini_read_string2(const char *file, const char *pSection, const char *pKey, char *pStr, int datalen);
 
 extern int32_t ini_write_int(const char *file, const char *pcSection, const char *pcKey, int Val);
 extern int32_t ini_write_string(const char *file, const char *pcSection, const char *pcKey, const char *pcStr);

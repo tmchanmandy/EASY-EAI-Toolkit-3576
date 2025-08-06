@@ -24,6 +24,28 @@ How to use：
 
 important update log:
 ---
+> 2025-08-06 :
+> * Release EASY-EAI-Toolkit-3576-0.0.3
+> * update easyeai-api
+>     * algorithm_api
+>         * [new] algorithm-person_pos
+>         * [new] algorithm-speech_recognition
+>         * [update] algorithm-car_detect
+>         * [update] algorithm-fire_detect
+>         * [update] algorithm-face_detect
+>         * [update] algorithm-face_recognition
+>         * [update] algorithm-helmet_detect
+>         * [update] algorithm-person_detect
+>         * [update] algorithm-ocr
+>     * common_api
+>         * [new] common-ipc
+>         * [new] common-json
+>         * [new] common-log_manager
+>         * [update] common-ini
+> * update Demo
+>     * [new] algorithm-person_pos
+>     * [new] algorithm-speech_recognition
+>
 > 2025-03-14 :
 > * Release EASY-EAI-Toolkit-3576-0.0.2
 > * update easyeai-api
